@@ -85,13 +85,6 @@ function setup(){
   spell1.addImage(spell1img);
   spell1.scale = 0.4;
 
-  /*fireballanimation = createSprite(200, 200, 20, 20);
-  fireballanimation.addAnimation("fire1", fireballimg1);
-  fireballanimation.addAnimation("fire2", fireballimg2);
-  fireballanimation.addAnimation("fire3", fireballimg3);
-  fireballanimation.addAnimation("fire4", fireballimg4);
-  fireballanimation.addAnimation("fire5", fireballimg5);*/
-
   lightningGroup = new Group();
   
 }
@@ -166,15 +159,24 @@ if(gameState === "level1"){
 
       spellbutton1 = createImg("Images/Spellbutton.jpg", "spellbuttonimg1");
       spellbutton1.position((displayWidth/2)-350, 320);
-      spellbutton1.size(60, 60);
+      spellbutton1.size(60, 60);    
 
       firespellbutton = createImg("Images/Fireballbutton.png", "firebutton");
       firespellbutton.position((displayWidth/2)+350, 320)
       firespellbutton.size(60, 60);
 
+      fireballanimation = createSprite(200, 200, 20, 20);
+      fireballanimation.addAnimation("fire1", fireballimg1);
+      fireballanimation.addAnimation("fire2", fireballimg2);
+      fireballanimation.addAnimation("fire3", fireballimg3);
+      fireballanimation.addAnimation("fire4", fireballimg4);
+      fireballanimation.addAnimation("fire5", fireballimg5);
+      fireballanimation.velocityX = 5;
+
+
       firespellbutton.mousePressed((()=>{
         var firespell = createSprite(harry.x, harry.y, 40, 40);
-        firespell.addAnimation("fireball", fireballimg1);
+        firespell.addAnimation("f1", fireballimg3);
       }))
 
       spellbutton1.mousePressed((()=>{
